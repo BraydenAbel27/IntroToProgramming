@@ -37,4 +37,3 @@ if operation == "%":
     print(modulus(x, y))
 if operation == "//":
     print(floor_division(x, y))
-
