@@ -77,7 +77,7 @@ def br_drop():
     return choice3
 
 def br_drop_early():
-    print("You drop early and land with 10 other players so you use your 2 flaks and get 3 kills and manage to escape with 1 hp.")
+    print("You drop early and land with 10 other players so you use your 2 flaks and get 3 kills and manage to escape.")
 def br_drop_center():
     print("You drop center with 1 other players and instantly mine tap him getting a kill and take zero damage")
 def br_drop_late():
@@ -256,8 +256,8 @@ def dunk():
     print("You think that you have no chance at winning so you just go into the water and lose the game.")
 
 
-def br_center():
-    print("You are in the center of the map and need to figure out a game plan. What do you do?")
+def br_strat():
+    print("You need to figure out a game plan. What do you do?")
     print("1. You go up to high ground and camp the whole game")
     print("2. You go hunt for some kills")
     global choice11
@@ -268,7 +268,7 @@ def br_center():
         hunt_strat()
     else:
         print("Invalid choice, choose a real option.")
-        br_center()
+        br_strat()
     return choice11
 
 def high_ground_strat():
@@ -412,6 +412,76 @@ def attack_above():
     print("You go up to high ground to attack the player up there leaving the other one below you.")
 
 
+def attack_down():
+    print("The player below you has nukes and mines. How do you attack?")
+    print("1. Spam all of your weapons.")
+    print("2. Change your mind and attack the player above.")
+    print("3. Mine tap.")
+    print("4. Close range flak.")
+    global choice18
+    choice18 = input("-> ")
+    if choice18 == "1":
+        br_spam()
+    elif choice18 == "2":
+        attack_above()
+    elif choice18 == "3":
+        mine_tap()
+    elif choice18 == "4":
+        close_range_flak()
+    else:
+        print("Invalid choice, choose a real option.")
+        attack_down()
+    return choice18
+
+def br_spam():
+    print("As you are spamming all of your weapons he hits you with a mine nuke, killing you.")
+def mine_tap():
+    print("You keep your distance and shoot a mine tap which hits him killing him.")
+def close_range_flak():
+    print("You try to get close to use your flak but he uses a mine nuke which kills you instantly.")
+
+
+def br_1v1():
+    print("There is 1 player left above you with shields. What do you do?")
+    print("1. Jetpack into him with a flak")
+    print("2. Dunk in the water.")
+    print("3. Use your mines to destory high ground.")
+    global choice19
+    choice19 = input("-> ")
+    if choice19 == "1":
+        jetpack_flak()
+    elif choice19 == "2":
+        dunk()
+    elif choice19 == "3":
+        mine_destory()
+    else:
+        print("Invalid choice, choose a real option.")
+        br_1v1()
+    return choice19
+
+
+def attack_up():
+    print("You go up to high ground to attack the player up there. What do you do?")
+    print("1. Jetpack to secondary high ground to camp.")
+    print("2. Use your mines to destory his land.")
+    print("3. Dunk in the water.")
+    global choice20
+    choice20 = input("-> ")
+    if choice20 == "1":
+        second_ground()
+    elif choice20 == "2":
+        mine_land()
+    elif choice20 == "3":
+        dunk()
+    else:
+        print("Invalid choice, choose a real option.")
+        attack_up()
+    return choice20
+
+def second_ground():
+    print("You get to the second highest point and camp till the end game where you use mine jumps to win the game.")
+def mine_land():
+    print("You shoot mines at his land but he uses a shield to block them and then the player from bellow comes up and kills you.")
 
 
 
@@ -473,7 +543,7 @@ if choice1 == "1" and choice2 == "3" and choice9 == "1":
 if choice1 == "2":
     br_drop()
 if choice1 == "2" and choice3 == "2":
-    br_center()
+    br_strat()
 if choice1 == "2" and choice3 == "2" and choice11 == "2":
     hunt_kills()
 if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "1":
@@ -490,3 +560,37 @@ if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "2":
     br_1hp()
 if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "1" and choice13 == "3":
     br_high_ground()
+if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "1":
+    attack_down()
+if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "1" and choice18 == "3":
+    br_1v1()
+if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "2":
+    attack_up()
+if choice1 == "2" and choice3 == "2" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "1" and choice18 == "2":
+    attack_up()
+if choice1 == "2" and choice3 == "1":
+    br_strat()
+if choice1 == "2" and choice3 == "1" and choice11 == "2":
+    hunt_kills()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1":
+    br_kill_wait()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "1":
+    br_camp()
+if choice1 == "2" and choice3 == "1" and choice11 == "1":
+    br_camp()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "1" and choice14 == "1":
+    player_camping()
+if choice1 == "2" and choice3 == "1" and choice11 == "1" and choice14 == "1":
+    player_camping()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "2":
+    br_1hp()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "3":
+    br_high_ground()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "1":
+    attack_down()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "1" and choice18 == "3":
+    br_1v1()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "2":
+    attack_up()
+if choice1 == "2" and choice3 == "1" and choice11 == "2" and choice12 == "1" and choice13 == "3" and choice17 == "1" and choice18 == "2":
+    attack_up()
