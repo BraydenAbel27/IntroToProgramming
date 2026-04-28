@@ -21,7 +21,8 @@ def ranked_match():
 def battle_royale():
     print("You hop into a battle royale with a loadout of 2 flaks, 2 mines, and 1 jetpack and get a lobby with some bad players so you know this'll be easy if you lock in.")
 def school_work():
-    print("You decide that you gotta lock in for that test tommorrow and do your work")
+    print("You decide that you gotta lock in for that test tommorrow and do your work.")
+    schoolwork()
 
 
 def ranked_drop():
@@ -46,13 +47,18 @@ def ranked_drop():
     return choice2
 
 def ranked_drop_early():
-    print("You drop early and land with 7 other players and get insta killed by all the spamming so you ragequit the game and just do your schoolwork.")
+    print("You drop early and land with 7 other players and get insta killed by all the spamming.")
+    ranked_loss()
 def ranked_drop_center():
     print("You drop center and land with 4 other players and all of you start heading up towards the high ground.")
 def ranked_drop_late():
     print("You drop late and land with no one else so you are safe for now and start heading up towards high ground.")
 def drop_dont():
-    print("You don't drop and die to the water so you decide to just lock in on your schoolwork.")
+    print("You don't drop and die to the water.")
+    if choice1 == "1":
+        ranked_loss()
+    elif choice1 == "2":
+        br_loss()
 
 
 def br_drop():
@@ -81,7 +87,8 @@ def br_drop_early():
 def br_drop_center():
     print("You drop center with 1 other players and instantly mine tap him getting a kill and take zero damage")
 def br_drop_late():
-    print("You drop late with 2 other players who team on you and end up whirlwinding you down into the water. You just close your chromebook and get back to work.")
+    print("You drop late with 2 other players who team on you and end up whirlwinding you down into the water.")
+    br_loss()
 
 
 def ranked_center():
@@ -105,7 +112,8 @@ def ranked_center():
 def ranked_center_retreat():
     print("You go after the player going down and he sees you and keeps running away getting close to the water.")
 def ranked_center_fight():
-    print("You go up to fight them and try to get some kills but using their height advantage they take you out. You close your chromebook abd get back to doing your work.")
+    print("You go up to fight them and try to get some kills but using their height advantage they take you out.")
+    ranked_loss()
 def ranked_center_sit():
     print("You sit in the middle and 1 of the tanks from above starts shooting at you hitting you once so now you have to fight him")
 
@@ -126,7 +134,8 @@ def ranked_center_low():
     return choice5
 
 def ranked_center_low_attack():
-    print("You jetpack towards him but he hits you with a whirlwind and you end up getting killed by the water. You close the game and get back to your work.")
+    print("You jetpack towards him but he hits you with a whirlwind and you end up getting killed by the water.")
+    ranked_loss()
 def ranked_center_low_escape():
     print("You let him escape and you go back up towards the middle and see one player coming down to attack you.")
 
@@ -154,7 +163,8 @@ def ranked_center_spam():
 def ranked_center_fullsend():
     print("You use your jetpack to make it above him but are left at 1 hp with him still attacking from bellow.")
 def ranked_center_flak():
-    print("You go into him with a flak and he shoots on at the same time so you end up trading kills and both dying. You go back to doing your work.")
+    print("You go into him with a flak and he shoots on at the same time so you end up trading kills and both dying.")
+    ranked_loss()
 
 
 def ranked_center_top():
@@ -177,10 +187,13 @@ def ranked_center_top():
 
 def ranked_top_camp():
     print("You sit on the high ground shooting shots bellow at him and he can't get up to you so he dunks into the water and you win the game.")
+    ranked_win()
 def ranked_top_mine():
     print("You go down to mine tap predict but miss completely and then he kills you.")
+    ranked_loss()
 def ranked_top_destroy():
-    print("You destory all the high ground but he just spams you with whirls and knocks you into the water, killing you.")
+    print("You destory all the high ground but he just spams you with whirls and knocks you into the water.")
+    ranked_loss()
 
 
 def ranked_center_1hp():
@@ -205,8 +218,10 @@ def ranked_1hp_shoot():
     print("You shoot down getting enough hits to heal up to 2 hp. He shoots a laser hitting you but you survive since you healed. You keep shooting and kill him then head up towards high ground.")
 def ranked_1hp_run():
     print("You run up to high ground but he shoots you with a laser killing you.")
+    ranked_loss()
 def ranked_1hp_charge():
     print("You go into him with no weapons and he easily takes you out.")
+    ranked_loss()
 
 
 def ranked_late():
@@ -250,10 +265,22 @@ def ranked_high_ground():
 
 def jetpack_flak():
     print("They use a shield but it doesn't matter cause you jetpack into them and kill them with your flak and get the win.")
+    if choice1 == "1":
+        ranked_win()
+    elif choice1 == "2":
+        br_win()
 def mine_destory():
-    print("You try to destroy th land with your mines but they use shields and block all of them making you die to the water.")
+    print("You try to destroy the land with your mines but they use shields and block all of them making you die to the water.")
+    if choice1 == "1":
+        ranked_loss()
+    elif choice1 == "2":
+        br_loss()
 def dunk():
     print("You think that you have no chance at winning so you just go into the water and lose the game.")
+    if choice1 == "1":
+        ranked_loss()
+    elif choice1 == "2":
+        br_loss()
 
 
 def br_strat():
@@ -295,7 +322,7 @@ def hunt_kills():
 def hunt_kill_wait():
     print("You wait for them to finish fighting and 1 player kills the other so now you go to attack him.")
 def hunt_kill_fight():
-    print("You decide to go in and attack them and since they are such noobs you easily take them both out taking but you get hit to 1hp.")
+    print("You decide to go in and attack them and since they are such noobs you easily take them both out but you get hit to 1hp.")
 
 
 def br_kill_wait():
@@ -320,6 +347,7 @@ def leave_kill_camp():
     print("You go up to high ground so you can try to camp to win the game.")
 def clip_farm():
     print("You go down and try to predict mine tap him but you are not that good at the game so you completely airball and die to the water.")
+    br_loss()
 def flak_kill():
     print("You kill him and then head up to high ground to try to win the game.")
 
@@ -343,6 +371,7 @@ def br_crates():
     print("You leave high ground to get the crates and the other player takes it with the water rising close bellow you.")
 def keep_camping():
     print("Using the high ground you easily camp out the water and get the win.")
+    br_win()
           
 
 def player_camping():
@@ -384,8 +413,10 @@ def br_1hp():
 
 def flak_1hp():
     print("You go into him to flak him but since you are 1hp he kills you before you get to him.")
+    br_loss()
 def run_away():
     print("You run away from him but he takes out a laser and since you are 1hp he kills you.")
+    br_loss()
 
 
 def br_high_ground():
@@ -434,11 +465,13 @@ def attack_down():
     return choice18
 
 def br_spam():
-    print("As you are spamming all of your weapons he hits you with a mine nuke, killing you.")
+    print("As you are spamming all of your weapons he hits you with a mine nuke which kills you.")
+    br_loss()
 def mine_tap():
-    print("You keep your distance and shoot a mine tap which hits him killing him.")
+    print("You keep your distance and shoot a mine tap which hits him and kills him.")
 def close_range_flak():
     print("You try to get close to use your flak but he uses a mine nuke which kills you instantly.")
+    br_loss()
 
 
 def br_1v1():
@@ -480,8 +513,24 @@ def attack_up():
 
 def second_ground():
     print("You get to the second highest point and camp till the end game where you use mine jumps to win the game.")
+    br_win()
 def mine_land():
     print("You shoot mines at his land but he uses a shield to block them and then the player from bellow comes up and kills you.")
+    br_loss()
+
+
+
+#endings
+def ranked_win():
+    print("You win your ranked match and gain trophies so you know it was worth playing the game instead of doing your schoolwork.")
+def ranked_loss():
+    print("You lose your ranked match and lose trophies so you know that it wasn't worth playing the game instead of doing your schoolwork.")
+def br_win():
+    print("You win your battle royale match and increase your win rate so you know it was worth not doing your schoolwork.")
+def br_loss():
+    print("You lose your battle royale match and decrease your win rate so you know it wasn't worth not doing your schoolwork.")
+def schoolwork():
+    print("Since you decided to do your schoolwork instead of playing Rocket Bot Royale you get a 100 on the test the next day.")
 
 
 
