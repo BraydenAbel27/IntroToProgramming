@@ -13,6 +13,7 @@ while counter <= 10:
 counter = 0
 while counter < 5:
     counter += 1
+    pass # Does nothing, just a placeholder
     if counter == 3:
         continue  # Skip the rest of the loop when counter is 3
     print(counter)
